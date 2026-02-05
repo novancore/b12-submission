@@ -28,5 +28,5 @@
              B12_EMAIL: "do.piper.eng@outlook.com"
              B12_RESUME_LINK: "https://drive.google.com/file/d/14YXo0jPxD7fUAe0qsKe_GG2QWDdHMwct/view"
              B12_REPOSITORY_LINK: "https://github.com/novancore/b12-submission"
-            #  B12_ACTION_RUN_LINK: "https://github.com/novancore/b12-submission/actions/runs/1"
+             B12_ACTION_RUN_LINK: "https://github.com/novancore/b12-submission/actions/runs/21704678836"
            run: python main.py
