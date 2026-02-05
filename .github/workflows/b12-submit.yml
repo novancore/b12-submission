@@ -1,0 +1,32 @@
+   name: B12 Submission
+
+   on:
+     workflow_dispatch: {}
+     push:
+       branches: [ main, master ]
+
+   jobs:
+     submit:
+       runs-on: ubuntu-latest
+
+       steps:
+         - name: Checkout
+           uses: actions/checkout@v4
+
+         - name: Set up Python
+           uses: actions/setup-python@v5
+           with:
+             python-version: "3.11"
+
+         - name: Install dependencies (stdlib only, so nothing to install)
+           run: python -m pip install --upgrade pip
+
+         - name: Run submission script
+           env:
+             B12_SIGNING_SECRET: hello-there-from-b12
+             B12_NAME: "Donovan Piper"
+             B12_EMAIL: "do.piper.eng@outlook.com"
+             B12_RESUME_LINK: "https://drive.google.com/file/d/14YXo0jPxD7fUAe0qsKe_GG2QWDdHMwct/view"
+             B12_REPOSITORY_LINK: "https://github.com/novancore/b12-submission"
+            #  B12_ACTION_RUN_LINK: "https://github.com/novancore/b12-submission/actions/runs/1"
+           run: python main.py
